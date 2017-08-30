@@ -64,10 +64,11 @@ module Enumerable
     	return count
     end
 
-    def my_map
+    def my_map(&p)
     	collection=[]
     	self.my_each do |i|
-    		collection << yield(i)
+    			collection << p.call(i)
+   
     	end
     	return collection
     end
@@ -85,14 +86,14 @@ module Enumerable
 end
 
 test_array = [1,2,3,4]
-
+test_proc = Proc.new {|i| i * 2}
 #test_array.my_each {|x| print x}
 puts " "
 #test_array.my_each_with_index {|x,y| puts x,y}
-puts " "
+#puts " "
 #puts test_array.my_select {|x| x>2}
 #puts test_array.my_all? {|x| x>2}
-#print test_array.my_map {|i| i * 2}
-puts test_array.my_inject{|res,element| res+element}
-puts " "
-puts test_array.multiply_els
+print test_array.my_map(&test_proc){|i| i * 2}
+#puts test_array.my_inject{|res,element| res+element}
+#puts " "
+#puts test_array.multiply_els
