@@ -85,15 +85,15 @@ module Enumerable
     end
 end
 
-test_array = [1,2,3,4]
-test_proc = Proc.new {|i| i * 2}
+#test_array = [1,2,3,4]
+#test_proc = Proc.new {|i| i * 2}
 #test_array.my_each {|x| print x}
-puts " "
+#puts " "
 #test_array.my_each_with_index {|x,y| puts x,y}
 #puts " "
 #puts test_array.my_select {|x| x>2}
 #puts test_array.my_all? {|x| x>2}
-print test_array.my_map(&test_proc){|i| i * 2}
+#print test_array.my_map(&test_proc){|i| i * 2}
 #puts test_array.my_inject{|res,element| res+element}
 #puts " "
 #puts test_array.multiply_els
